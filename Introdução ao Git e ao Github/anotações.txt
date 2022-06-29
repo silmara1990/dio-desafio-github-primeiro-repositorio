@@ -1,2 +1,51 @@
-Link para download do Git: https://git-scm.com/downloads
-O Git Bash é o terminal extendido para otimizar o uso do Git.
+O Que É Controle De Versionamento?
+Controle de versionamento de um software é o registro das alterações dos arquivos de um software ao longo do seu desenvolvimento; é o registro da história de um software. No entanto, é bom notar que versionamento normalmente não envolve grandes saltos entre versões. Ao invés disso, registram-se novas versões em pequenas mudanças, pequenos saltos, como adicionar um arquivo ou reescrever uma função.
+
+O Que Significa Ser Distribuído?
+Versionadores costumam trabalhar com o conceito de "repositórios". Um repositório contém o software em questão e sua história. Alguns versionadores, como o SVN, centralizam um software em um repositório remoto (servidor). Isso significa que toda nova versão tem de passar pelo servidor. Este não é o caso do Git. O Git possibilita repositórios locais. Isto é, você pode ter toda história do software na sua máquina, fazer suas próprias mudanças, compartilhar com vários repositórios remotos, etc.
+
+Git vs. GitHub
+Às vezes a distinção entre Git e GitHub é confusa, mas é a seguinte: Git é o programa que faz o versionamento em si e administra repositórios; GitHub é um serviço que hospeda repositórios Git em um servidor. Existem outros serviços semelhantes, como o GitLab e o BitBucket.
+
+
+
+Staging Area
+Quando se deseja começar uma nova versão, não se edita um arquivo e imediatamente ele é registrado. É possível, inclusive, registrar somente certos arquivos na nova versão, deixando de lado outros arquivos modificados. A staging area é o conjunto de arquivos cujas mudanças serão incluídas na nova versão.
+
+Na janela de tempo entre uma versão e outra, os arquivos podem estar em quatro estados. Estes são:
+
+Não-modificado (unmodified)
+Modificado (modified)
+Não-rastreado (untracked)
+Staged
+Estado Não-Modificado
+Arquivos neste estado estão na versão atual (HEAD) e não foram alterados.
+
+Estado Modificado
+Arquivos neste estado estão na versão atual (HEAD), foram alterados, mas não constarão na próxima versão.
+
+Estado Não-Rastreado
+Arquivos neste estado não estão presentes na versão atual (HEAD) e não constarão na próxima versão.
+
+Estado Staged
+Arquivos neste estado trazem alguma mudança e constarão na nova versão.
+
+
+git init
+O Git gerencia os repositórios no mesmo diretório/pasta da aplicação. Para inicializar o repositório, vá até o diretório do projeto e execute git init.
+
+git commit
+Para registrar uma nova versão, utiliza-se o comando git commit. Somente as mudanças com estado "staged" farão parte do commit. Sintaxe do comando:
+
+
+git commit -m 'mensagem do commit'
+A mensagem do commit deve ser um resumo ou uma identificação das mudanças introduzidas. É recomendado que a mensagem do commit não tenha muito mais do que 50 caracteres. É possível inserir a mensagem usando um editor de texto (por padrão, no Linux, é o vi), basta ocultar a opção -m e a mensagem, assim:
+
+
+git commit
+A todo commit, o Git associa um número chamado de hash. O número sempre é apresentado na sua forma hexadecimal, como por exemplo: 80ba4e49ee1fc346ee4934bdd2b4581e61b5c5fa.
+
+cd meu/projeto
+git init
+Você verá que o diretório conterá uma pasta oculta chamada .git. Jamais edite o conteúdo dessa pasta diretamente. O Git gerencia ela por você.
+
